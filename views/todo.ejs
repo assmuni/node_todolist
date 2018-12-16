@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Personal todo</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="ins-container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="todo-title">
+                        <h1>Todo list</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-8">
+                    <label for="todo-list">Here you todos.</label>
+                    <div class="todo-list">
+
+                        <% data.map(function(es){ %>
+                            <div class="alert alert-<%= es.type %> alert-dismissible fade show" role="alert">
+                                <strong>[<%= es.type %>]</strong> <%= es.todo %>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close" _id="<%= es._id %>">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        <% }) %>
+
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <form>
+                        <label for="todo">Write your task here.</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" aria-label="Text input with dropdown button" name="todo" required>
+                            <div class="input-group-append">
+                                <select class="custom-select" name="type">
+                                    <option selected disabled>- Type -</option>
+                                    <option value="secondary">Secondary</option>
+                                    <option value="info">Info</option>
+                                    <option value="primary">Primary</option>
+                                    <option value="success">Success</option>
+                                    <option value="warning">Warning</option>
+                                    <option value="danger">Danger</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-warning">Save</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script> -->
+    <script src="/assets/todo-list.js"></script>
+</body>
+</html>

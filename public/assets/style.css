@@ -1,0 +1,44 @@
+body {
+    color: #444;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.ins-container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+    background: palevioletred;
+    position: relative;
+    box-shadow: 3px 3px 10px #999;
+}
+
+.todo-title {
+    padding: 15px 0;
+    margin-bottom: 20px;
+    border: 2px dashed #444;
+}
+
+.todo-title h1 {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+.ins-container label {
+    font-weight: bold;
+}
+
+.input-group {
+    margin-bottom: 10px;
+}
+
+.form-control:focus, .custom-select:focus {
+    border-color: none;
+    box-shadow: none;
+}
+
+.custom-select {
+    border-bottom-left-radius: inherit;
+    border-top-left-radius: inherit;
+    width: 130px;
+}
